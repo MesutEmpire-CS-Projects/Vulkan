@@ -132,7 +132,7 @@ const std::vector<uint16_t> indices = {
         0, 1
 };
 
-class HelloTriangleApplication {
+class VulkanApplication {
 public:
     void run() {
         initWindow();
@@ -196,7 +196,7 @@ private:
     }
 
     static void framebufferResizeCallback(GLFWwindow* window, int width, int height) {
-        auto app = reinterpret_cast<HelloTriangleApplication*>(glfwGetWindowUserPointer(window));
+        auto app = reinterpret_cast<VulkanApplication*>(glfwGetWindowUserPointer(window));
         app->framebufferResized = true;
     }
 
@@ -1156,7 +1156,7 @@ private:
 };
 
 int main() {
-    HelloTriangleApplication app;
+    VulkanApplication app;
     for (const Vertex& vertex : vertices) {
         std::cout << "Position: (" << vertex.pos.x << ", " << vertex.pos.y << ")" << std::endl;
         std::cout << "Color: (" << vertex.color.r << ", " << vertex.color.g << ", " << vertex.color.b << ")" << std::endl;
